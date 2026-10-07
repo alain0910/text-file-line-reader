@@ -48,3 +48,10 @@ high or low half of a non-LF character is not mistaken for a newline.
 The `highWaterMark` controls read granularity, not line length: lines longer
 than the chunk size are reassembled transparently, at the cost of buffering
 the partial line in memory until its terminator arrives.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
