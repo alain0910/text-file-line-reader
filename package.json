@@ -1,6 +1,6 @@
 {
   "name": "text-file-line-reader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reads files line by line as an async iterator with configurable buffering and encoding detection.",
   "type": "module",
   "main": "src/index.js",
